@@ -6,24 +6,27 @@ export const Container = styled.div`
     align-items: center;
     background: #000;
     display: flex;
-    height: 84px;
+    height: 100px;
     justify-content: space-around;
     width: 100%;
+    
+    *{
+        background: inherit;
+    }
 
     h1{
         color: #FFF;
-        font-size: 40px;
+        font-size: 50px;
     }
 
     input{
-        background: #000;
         background-image: url(${whiteSearch});
         background-position: left center;
         background-repeat: no-repeat;
         border: none;
         border-bottom: 1px solid white;
         padding: 8px 30px;
-        width: 10%;
+        width: 14%;
         
         &:hover{
             background: #FFF;
