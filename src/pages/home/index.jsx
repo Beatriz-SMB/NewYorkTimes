@@ -3,7 +3,7 @@ import { homeRequest } from '../../api/home';
 import { Container } from './style';
 
 const Home = () => {
-    const [news, setNews] = useState([null])
+    const [news, setNews] = useState([])
 
     useEffect(() => {
         homeRequest(setNews)
@@ -12,13 +12,14 @@ const Home = () => {
     return(
         <Container>
             {news.map((element, index) => (
-                <article key={index}>
-                    {/* <img src={} alt="news" /> */}
-                    {console.log(element)}
-                    {/* <h2>{element.abstract}</h2>
-                    <p>{element.byline}</p> */}
-                </article>)
-            )}
+                <article key={index} onClick={() => window.location.href = element.url}>
+                    <img src={element.multimedia[0].url} alt="news" />
+                    <div>
+                        <h2>{element.abstract}</h2>
+                        <p>{element.byline}</p>
+                    </div>
+                </article>
+            ))}
         </Container>
     )
 }
